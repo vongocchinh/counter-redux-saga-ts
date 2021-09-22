@@ -1,0 +1,21 @@
+.container{
+    width:auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.row_pokemon{
+    width: 200px;
+    height: 200px;
+    border:1px solid black;
+    margin:10px;
+}
+
+.img{
+
+}

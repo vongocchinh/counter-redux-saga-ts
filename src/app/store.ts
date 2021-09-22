@@ -4,6 +4,7 @@ import counterReducer from '../features/counter/counterSlice';
 import createSagaMiddleware from 'redux-saga';
 
 import saga from './../Saga/RootSaga';
+import pokemonSlice from './../pokemon/pokemonSlice';
 
 const sagaMiddleware=createSagaMiddleware();
 
@@ -11,6 +12,7 @@ const sagaMiddleware=createSagaMiddleware();
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    pokemon:pokemonSlice
   },
   middleware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(sagaMiddleware),
 });
