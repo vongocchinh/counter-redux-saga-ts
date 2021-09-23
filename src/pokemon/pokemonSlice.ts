@@ -36,12 +36,20 @@ export interface pokemonState {
         getAllSuccess:(state,action: PayloadAction<any>)=>{
             state.status=ValidationPokemon.Fulfilled;
             state.pokemonArray=action.payload;
+        },
+        search:(state,action: PayloadAction<String>)=>{
+            
+        },
+        searchSuccess:(state,action: PayloadAction<PokemonModel[]>)=>{
+            state.pokemonArray=action.payload;
         }
     }
 });
 
-export const {getAll,getAllSuccess}=pokemonSlice.actions;
+export const {getAll,getAllSuccess,search,searchSuccess}=pokemonSlice.actions;
 
 export default pokemonSlice.reducer;
 
 export const GetPokeMonAll=(state:RootState)=>state.pokemon.pokemonArray;
+
+export const GetLoadingPokeMonAll=(state:RootState)=>state.pokemon.status?.toString();
